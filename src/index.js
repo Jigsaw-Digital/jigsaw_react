@@ -10,46 +10,50 @@ import {
 import Page from './components/Page';
 import {getNavigation, getPages} from "./helpers/wp";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
-const siteURL = 'https://neatsmith.jdsx.app';
+const siteURL = 'https://jigsaw-frontend.test';
 
 
 const identifyComponent = (page) => {
-    // this is where you map your template names to a component
-    // const components = {
-    //     // 'home': Home,
-    //     // 'about': About
-    // }
-// check the template from the response
-    if (page.template !== 'default' && page.template) {
-        return Page;
-    } else {
-        return Page;
-    }
+    return Page;
 }
 
 class AppInit {
     buildApp() {
         async function buildRoutes() {
-            let pageList = await getPages();
-            let navigation = await getNavigation();
+            var pageList = [];
+            var postTypes = [
+                'pages',
+                'projects'
+            ];
+
+            postTypes.map(async (postType, i) => {
+                pageList[postType] = await getPages(postType);
+            });
+
+            console.log(pageList);
+
+
+            let navigation = await getNavigation('main-menu');
+            let footer_navigation_1 = await getNavigation('footer-menu-1');
+            let footer_navigation_2 = await getNavigation('footer-menu-2');
+            let footer_navigation_3 = await getNavigation('footer-menu-3');
+            let footer_navigation_4 = await getNavigation('footer-menu-4');
 
             render(
-                <div className="test">
-                    <Router>
-                        <div>
+                <Router>
+                    <div>
+                        <Header/>
 
-                            <Header/>
-
-                            <Switch>
-
-                                {pageList.map((page, i) => {
+                        <Switch>
+                            {postTypes.map((post_type, i2) => {
+                                return pageList[post_type].map((page, i) => {
                                     let Template = identifyComponent(page)
                                     let pageID = page.id;
                                     let parent = page.parent;
                                     return (
-
                                         <Route
                                             key={pageID}
                                             path={`${parent ? '/' + parent : ''}/${page.slug}`}
@@ -58,33 +62,30 @@ class AppInit {
                                             exact
                                         />
                                     )
-                                })}
-                                {/*<Route component={NotFound} />*/}
-                                    </Switch>
-                                    </div>
-                                    </Router>
+                                })
+                            })}
+                            {/*<Route component={NotFound} />*/}
+                        </Switch>
 
-                                    </div>
-                                    , document.getElementById('root')
-                                    )
-                                }
+                        <Footer/>
+                    </div>
+                </Router>
 
-                                buildRoutes();
-                                }
-
-        /*
-         * Run the App
-         */
-        run()
-        {
-            this.buildApp();
+                , document.getElementById('root')
+            )
         }
+
+        buildRoutes();
     }
 
-    new
+    /*
+     * Run the App
+     */
+    run() {
+        this.buildApp();
+    }
+}
 
-    AppInit()
+new
 
-.
-
-    run();
+AppInit().run();

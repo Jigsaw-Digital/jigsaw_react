@@ -2,16 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+    overflow: scroll;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+    @apply min-h-screen;
+}
+
+.white-text-border {
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+
+/**
+ * Pre content styles
+ */
+.jd-text-content p:first-child {
+    @apply mt-0 !important;
+}
+
+.jd-text-content ul {
+    @apply list-disc list-inside  my-4 ml-5 leading-loose text-sm;
+}
+
+.jd-text-content ol {
+    @apply list-decimal list-inside my-4 ml-5 leading-loose text-sm;
+}
+
+.jd-text-content p {
+    @apply mt-4 text-lg;
+}
+
+.jd-text-content p a {
+    @apply opacity-50;
+}
+
+.jd-text-content p a:hover {
+    @apply opacity-75;
+}
+
+.jd-text-content blockquote {
+    @apply my-10 mx-5 px-4 opacity-50 text-lg border-l-2 border-black border-opacity-75;
 }
