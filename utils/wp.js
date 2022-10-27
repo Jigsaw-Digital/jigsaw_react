@@ -1,4 +1,4 @@
-const BASE_URL = "https://jigsaw-frontend.test/wp-json/wp/v2";
+const BASE_URL = "https://api.jigsaw.digital/wp-json/wp/v2";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 export async function getMainMenu() {

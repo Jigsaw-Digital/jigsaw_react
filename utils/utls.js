@@ -7,5 +7,5 @@ export function getDate(date) {
 }
 
 export function abs_url(value) {
-  return value.replace("https://jigsaw-frontend.test", "");
+  return value.replace("https://api.jigsaw.digital", "");
 }

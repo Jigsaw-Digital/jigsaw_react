@@ -95,7 +95,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar({ menuItems, backgroundColour }) {
+export default function Navbar({ menuItems = [], backgroundColour }) {
   const [colorTheme, setTheme] = useDarkMode();
   return (
     <Popover
