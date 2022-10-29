@@ -7,12 +7,9 @@ export default function LayoutText({ block }) {
   return (
     <Section block={block}>
       <div
-        className="content"
+        className="content text-shark-900 dark:text-white text-lg w-2/3 max-w-[800px] mx-auto mt-16"
         dangerouslySetInnerHTML={{ __html: data.text }}
       ></div>
-      {/*<pre style={{ outline: "1px solid yellow" }}>*/}
-      {/*  {JSON.stringify(block, null, 2)}*/}
-      {/*</pre>*/}
     </Section>
   );
 }

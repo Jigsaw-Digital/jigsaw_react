@@ -24,9 +24,9 @@ export default function LayoutPortfolio({block}) {
 
     return (
         <Section block={block}>
-            <div className=" bg-white dark:bg-shark-900 max-w-7xl mx-auto pt-20">
+            <div className=" bg-white dark:bg-shark-900 max-w-7xl mx-auto">
                 <div className="container mx-auto">
-                    <div role="list" className="grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
+                    <div role="list" className="grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2 px-8">
                         {work.map((w) => (
                             <div
                                 key={w.id}
@@ -43,7 +43,7 @@ export default function LayoutPortfolio({block}) {
                                         className="flex flex-1 flex-col z-1 transition-all ease-in-out hover:scale-105 py-10">
                                         <Link href={abs_url(w.link)}>
                                             <div>
-                                                <div className="overflow-hidden h-[20rem]">
+                                                <div className="overflow-hidden px-6">
                                                     <Image
                                                         src={w.fimg_url.url}
                                                         layout={"responsive"}

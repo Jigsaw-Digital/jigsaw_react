@@ -14,7 +14,7 @@ export default function Layout({children, menuItems, backgroundColour = false}) 
                 <link type="text/css" href="../styles/app.css"/>
             </Head>
             <Navbar menuItems={menuItems} backgroundColour={backgroundColour}/>
-            <div>
+            <div className="main">
                 <AnimatePresence
                     exitBeforeEnter
                     initial={false}

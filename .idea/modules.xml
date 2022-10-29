@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/jigsaw_react.iml" filepath="$PROJECT_DIR$/.idea/jigsaw_react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jigsaw_front_end/.idea/the_fireplace.iml" filepath="$PROJECT_DIR$/../jigsaw_front_end/.idea/the_fireplace.iml" />
     </modules>
   </component>
 </project>

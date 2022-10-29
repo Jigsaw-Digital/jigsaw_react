@@ -6,6 +6,7 @@ export default function LayoutImage({ block }) {
 
   return (
     <Section block={block}>
+      <div className="mx-auto max-w-7xl mt-16 px-8">
       <Image
         src={data.image.url}
         layout={"responsive"}
@@ -13,9 +14,7 @@ export default function LayoutImage({ block }) {
         width={data.image.width}
         quality={100}
       />
-      {/*<pre style={{ outline: "1px solid yellow" }}>*/}
-      {/*  {JSON.stringify(block, null, 2)}*/}
-      {/*</pre>*/}
+      </div>
     </Section>
   );
 }

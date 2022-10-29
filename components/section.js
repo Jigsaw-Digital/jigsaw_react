@@ -15,7 +15,7 @@ export default function Section(props) {
   let size_class = size[data.jd_section_options_section_width];
 
   return (
-    <section className={`relative mx-auto overflow-hidden${size_class}`}>
+    <section className={`relative mx-auto overflow-hidden ${size_class}`}>
       <div className={`mx-auto `}>
         <div className="bg-primary_silver justify-center overflow-hidden">
           {props.children}

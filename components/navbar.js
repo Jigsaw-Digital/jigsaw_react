@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import useDarkMode from "../useDarkmode";
+import useDarkMode from "./useDarkMode";
 import {
   Bars3Icon,
   BookmarkSquareIcon,
@@ -95,13 +95,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar({ menuItems = [], backgroundColour }) {
+export default function Navbar({ menuItems = [] }) {
   const [colorTheme, setTheme] = useDarkMode();
   return (
     <Popover
-      className={`${GlobalColours["navbar_background"]}  fixed top-0 left-0 z-50 w-full`} style={{
-        'background-color': backgroundColour
-    }}
+      className={`navbar  fixed top-0 left-0 z-50 w-full`}
     >
       <div
         className="pointer-events-none absolute inset-0 z-30"

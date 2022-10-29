@@ -1,16 +1,20 @@
 import LayoutSpacing from "./layouts/layoutSpacing";
+import LayoutSmallHero from "./layouts/layoutSmallHero";
 import LayoutHero from "./layouts/layoutHero";
 import LayoutDebug from "./layouts/layoutDebug";
 import LayoutImage from "./layouts/layoutImage";
 import LayoutText from "./layouts/layoutText";
 import LayoutPortfolio from "./layouts/layoutPortfolio";
+import LayoutGallery from "./layouts/LayoutGallery";
 
 const components = {
   "acf/layout-hero": LayoutHero,
+  "acf/layout-small-hero": LayoutSmallHero,
   "acf/layout-spacing": LayoutSpacing,
   "acf/layout-image": LayoutImage,
   "acf/layout-text": LayoutText,
   "acf/layout-portfolio": LayoutPortfolio,
+  "acf/layout-gallery": LayoutGallery,
 };
 
 export default function LayoutRenderer({ blocks }) {
